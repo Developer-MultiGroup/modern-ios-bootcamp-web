@@ -281,35 +281,35 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Google Content Section */}
+        {/* Apple Content Section */}
         <section className="bg-[#F8F9FB]">
           <div className="max-w-7xl mx-auto py-12 sm:py-16 md:py-24 lg:py-32 px-4 sm:px-6 md:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-12 lg:gap-36">
-              {/* Google Text */}
+              {/* Apple Text */}
               <div className="flex flex-col justify-center">
                 <h2
                   style={{ fontFamily: "Open Sans", fontWeight: "800" }}
-                  className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold mb-6 sm:mb-8 flex flex-wrap items-center justify-center text-center md:justify-start md:text-left"
+                  className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold mb-6 sm:mb-8 text-center md:text-left"
                 >
-                  {/* Google logosu */}
-                  <img
-                    src="/google-logo.png"
-                    alt="Google Logo"
-                    className="w-auto h-10 sm:h-12  md:h-16  lg:h-18 mr-2"
-                  />
-                  <span className="text-black dark:text-white">
-                    Tarafından &nbsp;
-                  </span>
-                  <span className="leading-snug">
-                    Hazırlanan En{" "}
-                    <span className="text-secondary"> Güncel İçerikleri </span>{" "}
-                    Sizler İçin Derledik!
-                  </span>
-                  <span className="text-sm sm:text-md md:text-lg lg:text-xl font-light pt-6">
-                    Bir dolu bilgi yığının içinde sizin için derlenen ve
-                    toplanan en güncel düzenlenmiş ve kullanışlı eğitim
-                    içerişini sunuyoruz. Eminiz google da bunu isterdi!
-                  </span>
+                  {/* 4 eşit satır */}
+                  <div className="block leading-snug">
+                    <span className="text-[#FF6B35] font-bold">Swift</span>
+                    <span className="text-black dark:text-white ml-2">ile Modern</span>
+                  </div>
+                  <div className="block leading-snug">
+                    <span className="text-black dark:text-white">iOS Geliştirme</span>
+                  </div>
+                  <div className="block leading-snug">
+                    <span className="text-secondary">Yolculuğunuza</span>
+                  </div>
+                  <div className="block leading-snug">
+                    <span className="text-black dark:text-white">Başlayın!</span>
+                  </div>
+                  <div className="text-sm sm:text-md md:text-lg lg:text-xl font-light pt-6 block">
+                    Apple'ın en güncel teknolojileri ve SwiftUI framework'ü ile
+                    iOS geliştirme dünyasına adım atın. Modern ve kullanıcı dostu
+                    uygulamalar geliştirmenin sırlarını keşfedin!
+                  </div>
                 </h2>
               </div>
 
@@ -318,27 +318,27 @@ export default function Home() {
                 {[
                   {
                     number: "Unit 1",
-                    title: "Blast Off",
+                    title: "Swift Fundamentals",
                     description:
-                      "Begin your Android development journey with the fundamentals of Kotlin and app architecture.",
+                      "Begin your iOS development journey with Swift programming language fundamentals and Xcode basics.",
                   },
                   {
                     number: "Unit 2",
-                    title: "Android Galaxy",
+                    title: "SwiftUI Universe",
                     description:
-                      "Explore UI development with Jetpack Compose and Material Design principles.",
+                      "Explore modern UI development with SwiftUI framework and Apple's Human Interface Guidelines.",
                   },
                   {
                     number: "Unit 3",
-                    title: "Solid Ground",
+                    title: "Core Data & APIs",
                     description:
-                      "Master data management with Room Database and network operations using Retrofit.",
+                      "Master data persistence with Core Data and network operations using URLSession and Combine.",
                   },
                   {
                     number: "Unit 4",
-                    title: "Infinity & Beyond",
+                    title: "App Store Ready",
                     description:
-                      "Advanced topics including architecture patterns, testing, and performance optimization.",
+                      "Advanced iOS patterns, testing with XCTest, performance optimization, and App Store deployment.",
                   },
                 ].map((unit, index) => (
                   <div
@@ -348,8 +348,8 @@ export default function Home() {
                     <div className="flex items-center space-x-4">
                       <div className="pt-0 mt-0 flex-shrink-0">
                         <img
-                          src="/jetpack-compose.svg"
-                          alt="Android Icon"
+                          src="/swiftui-icon.svg"
+                          alt="SwiftUI Icon"
                           className="w-6 h-6 md:w-8 md:h-8 transition-transform duration-300 group-hover:rotate-90"
                         />
                       </div>

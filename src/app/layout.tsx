@@ -23,8 +23,8 @@ const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Android Blast Off",
-  description: "Modern Android geliştirme dünyasına hızlı bir giriş yapmaya hazır mısın? 40 saatlik bu ücretsiz Jetpack Compose Bootcamp ile, Android uygulama geliştirmede en güncel ve güçlü araçları öğrenme fırsatını kaçırma!",
+  title: "Modern iOS Bootcamp",
+  description: "Apple'ın en güncel teknolojileri ve SwiftUI framework'ü ile iOS geliştirme dünyasına adım atın. Modern ve kullanıcı dostu uygulamalar geliştirmenin sırlarını keşfedin!",
   robots: {
     index: true,
     follow: true,
@@ -41,8 +41,10 @@ export const metadata: Metadata = {
     "Topluluk",
     "Yazılım Topluluğu",
     "Eğitim",
-    "Android",
-    "Jetpack Compose",
+    "iOS",
+    "Apple",
+    "SwiftUI",
+    "Modern iOS Bootcamp",
     "Youtube Bootcamp",
     "Video Bootcamp",
     "Online Bootcamp"
