@@ -173,7 +173,7 @@ const CardDescription = ({
       variants={variants}
       transition={{ type: "tween", duration: 0.2 }}
       className={cn(
-        "mt-2 max-w-xs font-sans text-base font-normal tracking-tight text-neutral-500 dark:text-neutral-400 font-montserrat-mid",
+        "mt-2 max-w-xs text-base font-normal tracking-tight text-neutral-500 dark:text-neutral-400 font-montserrat-mid",
         className,
       )}
     >
