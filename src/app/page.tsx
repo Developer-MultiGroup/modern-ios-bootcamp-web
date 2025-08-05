@@ -7,22 +7,29 @@ import { ChevronDownIcon } from "lucide-react";
 import FloatingActionButton from "@/components/floating-action-button";
 import SponsorSlider from "@/components/sponsor-slider";
 import events from "@/data/events";
+import { FlipWords } from "@/components/ui/flip-words";
+import { Button } from "@/components/ui/moving-border";
+import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
+import { StatsWithNumberTicker } from "@/components/ui/stats-with-ticker";
+import { MacbookScroll } from "@/components/ui/macbook-scroll";
+import { FAQsWithGrid } from "@/components/ui/faq";
+import { IOSBootcampBentoGrid } from "@/components/ui/bento-grid";
 
 const bootcampBenefits = [
   {
-    title: "Güncel ve Yetkin Müfredat",
+    title: "Apple'ın En Güncel Teknolojileri",
     content:
-      "Google'ın resmi kaynakları ve Jetpack Compose'un en son sürümlerine göre hazırlanmış içeriklerle, sektörün ihtiyaçlarına %100 uyumlu içerik.",
+      "Swift, SwiftUI, Core Data ve Combine framework'lerinin en son sürümlerine göre hazırlanmış içeriklerle, iOS geliştirme dünyasının ihtiyaçlarına %100 uyumlu müfredat.",
   },
   {
-    title: "Proje Tabanlı Öğrenme",
+    title: "Proje Tabanlı iOS Geliştirme",
     content:
-      "Sadece teori değil! Her modülde gerçek dünya uygulamaları geliştirerek portfolyonuzu şekillendirin. Farklı projeler ile işverenlerin dikkatini çekin.",
+      "Sadece teori değil! Her modülde gerçek dünya iOS uygulamaları geliştirerek portfolyonuzu şekillendirin. App Store'a hazır projeler ile işverenlerin dikkatini çekin.",
   },
   {
-    title: "Topluluk ve Mentor Desteği",
+    title: "iOS Topluluk ve Mentor Desteği",
     content:
-      "Türkçe kaynak eksikliğini ortadan kaldıran yerel bir toplulukla, deneyimli mentörler eşliğinde sorunlarınızı anında çözün.",
+      "Türkçe iOS kaynak eksikliğini ortadan kaldıran yerel bir toplulukla, deneyimli iOS mentörleri eşliğinde sorunlarınızı anında çözün.",
   },
 ];
 
@@ -53,36 +60,38 @@ export default function Home() {
   return (
     <>
       {/* Hero Section - Responsive for all devices */}
-      <section className="min-h-screen bg-[#1F2326] flex flex-col items-center justify-center text-white relative px-4 sm:px-6 md:px-8">
-        <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-tan-nimbus text-center leading-tight sm:leading-snug">
-          Android <span className="text-secondary">Blast Off</span>{" "}
-        </h1>
-        <p className="text-xl sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-extrabold font-montserrat-mid text-center text-accent">
-          Jetpack Compose Bootcamp
-        </p>
-        <button
-          className="
-        relative text-xl md:text-2xl mt-8 py-1 md:py-2 px-4 md:px-6 font-semibold border-none cursor-pointer
-        inline-flex items-center gap-2 transition-all duration-250
-        bg-[#41DF9A] text-white rounded-lg
-        shadow-[inset_0_1px_0_0_#65e4a1,0_1px_0_0_#38d17e,0_3px_0_0_#35c979,0_5px_0_0_#31bd72,0_7px_0_0_#2eb46d,0_9px_0_0_#2bab68,0_11px_0_0_#28a263,0_11px_10px_0_rgba(40,162,99,0.5)]
-        hover:translate-y-[6px]
-        hover:shadow-[inset_0_1px_0_0_#65e4a1,0_1px_0_0_#38d17e,0_2px_0_0_#35c979,0_3px_0_0_#31bd72,0_4px_0_0_#2eb46d,0_5px_0_0_#2bab68,0_6px_0_0_#28a263,0_6px_8px_0_rgba(40,162,99,0.5)]
-        active:translate-y-[10px]
-        active:shadow-[inset_0_1px_0_0_#65e4a1,0_1px_0_0_#38d17e,0_1px_0_0_#35c979,0_1px_0_0_#31bd72,0_1px_0_0_#2eb46d,0_1px_0_0_#2bab68,0_2px_0_0_#28a263,0_2px_4px_0_rgba(40,162,99,0.5)]
-      "
-        >
+      <section className="min-h-screen bg-[url('/images/modern-ios-hero.webp')] bg-cover bg-center flex flex-col items-center justify-center text-white relative px-4 sm:px-6 md:px-8">
+        {/* Blur overlay */}
+        <div className="absolute inset-0 bg-[url('/images/modern-ios-hero.webp')] bg-cover bg-center blur-sm"></div>
+        {/* Content overlay */}
+        <div className="relative z-10 flex flex-col items-center justify-center">
+          <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-tan-nimbus text-center leading-tight sm:leading-snug">
+            <span className="text-secondary">Modern iOS</span> Bootcamp
+          </h1>
+          <p className="mb-8 text-xl sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-extrabold font-montserrat-mid text-center text-accent">
+            <FlipWords
+              words={[
+                "Swift & SwiftUI",
+                "iOS App Development",
+                "Apple Ecosystem",
+                "Mobile Development",
+              ]}
+              className="text-white"
+            />
+          </p>
+
           <a
-            href="https://kommunity.com/devmultigroup/events/android-blast-off-jetpack-compose-bootcamp-18857d79"
+            href="https://kommunity.com/devmultigroup/events/modern-ios-bootcamp-18857d79"
             target="_blank"
+            className="hover:cursor-pointer hover:scale-105 transition-all duration-300"
           >
-            <span>Hemen Başvur</span>
+            <Button className="text-white bg-transparent">Hemen Kaydol</Button>
           </a>
-        </button>
+        </div>
 
         {/* Scroll Animation */}
         <div
-          className={`absolute bottom-8 flex flex-col items-center transition-opacity duration-500 ${
+          className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center transition-opacity duration-500 ${
             isVisible ? "opacity-100" : "opacity-0"
           }`}
         >
@@ -92,7 +101,7 @@ export default function Home() {
           <div className="animate-bounce bg-primary rounded-full p-2">
             <ChevronDownIcon
               onClick={handleScroll}
-              className="hover:cursor-pointer h-5 w-5 sm:h-8 sm:w-8 text-secondary"
+              className="hover:cursor-pointer h-5 w-5 sm:h-8 sm:w-8 text-[#1C1C1C]"
             />
           </div>
         </div>
@@ -103,181 +112,48 @@ export default function Home() {
 
       {/* Main Content Section */}
       <div className="bg-background">
-        {/* Second Info Section */}
+        {/* iOS Bootcamp Info Section */}
         <section className="bg-background">
-          {/* Backdrop Containers Section - Centered and Responsive */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 px-6 xl:px-0 py-8 sm:py-12 md:py-24 max-w-7xl mx-auto">
-            {/* First Backdrop Container */}
-            <div className="relative group mx-auto w-full max-w-md md:max-w-none">
-              {/* Shadow effect with fixed shadow size */}
-              <div className="relative p-4 sm:p-6 bg-primary rounded-lg h-full shadow-[8px_8px_0px_0px_#41DF99]">
-                <h2 className="text-xl sm:text-2xl font-bold text-white mb-3">
-                  Başlamadan Önce
-                </h2>
-                <p className="text-white mb-4 font-montserrat-mid text-sm sm:text-base w-5/6 text-left md:text-justify">
-                  Android geliştirmeye başlamak isteyenler için{" "}
-                  <span className="text-secondary">en güncel ve kapsamlı</span>{" "}
-                  eğitim içeriği. Bu kursa adım atmadan önce tek yapmanız
-                  gereken şey,{" "}
-                  <span className="text-secondary">
-                    kararlılıkla hedeflerinize odaklanmaktır.
-                  </span>
-                </p>
-                <div className="flex justify-end group-hover:-translate-y-2 transition-all duration-300">
-                  <Image
-                    src="/android-icon.svg"
-                    alt="Android Icon"
-                    width={32}
-                    height={32}
-                    className="opacity-80"
-                  />
-                </div>
-              </div>
-            </div>
+          {/* Stats Section */}
+          <StatsWithNumberTicker />
+          {/* iOS Bootcamp Bento Grid Section */}
+          <IOSBootcampBentoGrid />
+        </section>
 
-            {/* Second Backdrop Container */}
-            <div className="relative group mx-auto w-full max-w-md md:max-w-none">
-              {/* Shadow effect with fixed shadow size */}
-              <div className="relative p-4 sm:p-6 bg-primary rounded-lg h-full shadow-[8px_8px_0px_0px_#41DF99]">
-                <h2 className="text-xl sm:text-2xl font-bold text-white mb-3">
-                  Bootcamp Hedefleri
-                </h2>
-                <p className="text-white mb-4 font-montserrat-mid text-sm sm:text-base w-5/6 text-left md:text-justify">
-                  <span className="text-secondar">
-                    Kotlin ve Jetpack Compose
-                  </span>{" "}
-                  kullanarak sıfırdan bir mobil uygulama geliştirebilecek, aynı
-                  zamanda bu teknolojilerin{" "}
-                  <span className="text-secondary">mantığını kavrayarak</span>{" "}
-                  kendinizi ileri seviye içeriklere hazırlayabileceksiniz.
-                </p>
-                <div className="flex justify-end group-hover:-translate-y-2 transition-all duration-300">
-                  <Image
-                    src="/android-icon.svg"
-                    alt="Android Icon"
-                    width={32}
-                    height={32}
-                    className="opacity-80"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Jetpack Compose Section */}
-          <div className="max-w-7xl mx-auto pt-16 pb-8 sm:py-16 md:pt-24 md:pb-8 px-4 sm:px-6 md:px-8">
-            <h2 className="text-center text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8">
-              Jetpack Compose{" "}
-              <span className="text-black dark:text-white">ile modern</span>{" "}
-              <span className="text-accent  underline underline-offset-3 md:no-underline decoration-accent">
-                Android
-              </span>{" "}
-              <br className="sm:hidden" />
-              <span className="text-accent  underline underline-offset-3 md:no-underline decoration-accent">
-                geliştirmeye
-              </span>{" "}
-              <span className="text-black dark:text-white">ilk adımı at!</span>
-            </h2>
-
-            <p className="text-center max-w-3xl mx-auto text-xl sm:text-base md:text-xl my-6 sm:my-8 md:my-12 px-4 font-montserrat-mid font-extrabold">
-              Jetpack Compose ile Android geliştirici olmak istiyorsan, en
-              güncel müfredat ve yeniliklerle güçlü bir başlangıç yap!
+        {/* Live Coding Title Section */}
+        <section className="relative pt-12 sm:pt-16 md:pt-20">
+          <div className="max-w-4xl mx-auto px-4 text-center">
+            <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-3 sm:mb-4 text-neutral-800 dark:text-white">
+              Canlı iOS Kodlama ile{" "}
+              <span className="text-accent">%80 Daha Kalıcı</span> Öğrenin!
+            </h3>
+            <p className="text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto text-sm md:text-base leading-relaxed px-2 sm:px-0 font-montserrat-mid">
+              Canlı ve online iOS eğitimlerle yalnızca bilgi edinmekle kalmayın;
+              Swift ve SwiftUI eğitimini, anında sorular sorarak size özel hale getirin.
             </p>
-          </div>
-
-          <div className="grid grid-cols-1 gap-y-12 md:grid-cols-4 gap-4 pb-24 text-center max-w-5xl mx-auto relative">
-            <div className="flex flex-col items-center">
-              <h3 className="text-xl mb-2 font-montserrat-mid font-extrabold">
-                Katılım Başvurusu
-              </h3>
-              <p className="text-5xl font-montserrat-semi font-bold">
-                500<span className="text-accent">+</span>
-              </p>
-            </div>
-
-            <div className="hidden md:block absolute h-1/2 w-[2px] bg-black left-1/4 top-0"></div>
-
-            <div className="flex flex-col items-center">
-              <h3 className="text-xl mb-2 font-montserrat-mid font-extrabold">
-                Özel Konuk
-              </h3>
-              <p className="text-5xl font-montserrat-semi font-bold">
-                100<span className="text-accent">+</span>
-              </p>
-            </div>
-
-            <div className="hidden md:block absolute h-1/2 w-[2px] bg-black left-1/2 top-0"></div>
-
-            <div className="flex flex-col items-center">
-              <h3 className="text-xl mb-2 font-montserrat-mid font-extrabold">
-                Topluluk Destekçisi
-              </h3>
-              <p className="text-5xl font-montserrat-semi font-bold">
-                150<span className="text-accent">+</span>
-              </p>
-            </div>
-
-            <div className="hidden md:block absolute h-1/2 w-[2px] bg-black left-3/4 top-0"></div>
-
-            <div className="flex flex-col items-center">
-              <h3 className="text-xl mb-2 font-montserrat-mid font-extrabold">
-                Konuşmacı Sayısı
-              </h3>
-              <p className="text-5xl font-montserrat-semi font-bold">
-                30<span className="text-accent">+</span>
-              </p>
+            <div className="mt-4 sm:mt-6 md:mt-8">
+              <Button className="bg-accent text-white hover:bg-accent/90 transition-all duration-300 text-sm sm:text-base">
+                <a
+                  href="https://docs.google.com/spreadsheets/d/1hsckdhSJrvN6VG0NfO2lghY0A8bSjqhGYnNATGPWzcc/edit?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white font-medium"
+                >
+                  Eğitimler
+                </a>
+              </Button>
             </div>
           </div>
         </section>
 
-        {/* Video and Text Section */}
-        <section className="max-w-5/6 xl:max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-24 md:gap-30 pb-36 md:pb-64 lg:pb-64 pt-12 md:pt-24 lg:pt-32 ">
-          {/* Video Container */}
-          <div className="relative group mx-auto w-full max-w-lg lg:max-w-none my-auto">
-            {/* Using fixed box-shadow instead of translating element */}
-            <div className="bg-secondary rounded-lg overflow-hidden shadow-[12px_12px_0px_0px_#1F2226]">
-              <div className="p-2 sm:p-3 md:p-4 ">
-                <Image
-                  src="/illustration.png"
-                  alt="Video Placeholder"
-                  width={400}
-                  height={300}
-                  className="w-300px h-auto rounded-lg mx-auto"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Text Content */}
-          <div className="flex flex-col justify-center px-4 sm:px-0">
-            <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
-              Canlı Kodlama ile{" "}
-              <span className="text-accent">%80 Daha Kalıcı</span> Öğrenin!
-            </h3>
-            <p className="text-gray-600 dark:text-gray-300 my-4 sm:my-6 text-sm sm:text-base text-justify">
-              Canlı ve online eğitimlerle yalnızca bilgi edinmekle kalmayın;
-              eğitimi, anında sorular sorarak size özel hale getirin. Sonuçta en
-              iyi nasıl öğrendiğinizi sizden iyi kim bilebilir ki?
-            </p>
-            <div className="flex justify-center lg:justify-start">
-              <button className="relative h-11 px-6 text-zinc-900 group transition-all duration-300 ease-in-out">
-                <a
-                  href="https://docs.google.com/spreadsheets/d/1hsckdhSJrvN6VG0NfO2lghY0A8bSjqhGYnNATGPWzcc/edit?usp=sharing"
-                  target="_blank"
-                >
-                  <div className="absolute inset-0 bg-secondary transition-transform duration-300 ease-in-out rounded-md" />
-                  <div className="absolute inset-0 bg-primary group-hover:translate-x-2 group-hover:-translate-y-2 transition-all duration-300 ease-in-out rounded-md flex items-center justify-center">
-                    <span
-                      data-umami-event="Youtube Link"
-                      className="relative z-10 font-medium text-md text-white"
-                    >
-                      Eğitimler
-                    </span>
-                  </div>
-                </a>
-                <span className="invisible font-medium text-sm">Kayıt Ol</span>
-              </button>
-            </div>
+        {/* Macbook Scroll Section */}
+        <section className="relative overflow-hidden py-4 sm:py-8 md:py-12">
+          <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background z-10"></div>
+          <div className="relative z-20">
+            <MacbookScroll
+              src="/images/live.webp"
+              showGradient={true}
+            />
           </div>
         </section>
 
@@ -293,22 +169,28 @@ export default function Home() {
                 >
                   {/* 4 eşit satır */}
                   <div className="block leading-snug">
-                    <span className="text-[#FF6B35] font-bold">Swift</span>
-                    <span className="text-black dark:text-white ml-2">ile Modern</span>
+                    <span className="text-accent font-bold">Swift</span>
+                    <span className="text-black dark:text-white ml-2">
+                      ile Modern
+                    </span>
                   </div>
                   <div className="block leading-snug">
-                    <span className="text-black dark:text-white">iOS Geliştirme</span>
+                    <span className="text-black dark:text-white">
+                      iOS Geliştirme
+                    </span>
                   </div>
                   <div className="block leading-snug">
-                    <span className="text-secondary">Yolculuğunuza</span>
+                    <span className="text-accent">Yolculuğunuza</span>
                   </div>
                   <div className="block leading-snug">
-                    <span className="text-black dark:text-white">Başlayın!</span>
+                    <span className="text-black dark:text-white">
+                      Başlayın!
+                    </span>
                   </div>
                   <div className="text-sm sm:text-md md:text-lg lg:text-xl font-light pt-6 block">
                     Apple'ın en güncel teknolojileri ve SwiftUI framework'ü ile
-                    iOS geliştirme dünyasına adım atın. Modern ve kullanıcı dostu
-                    uygulamalar geliştirmenin sırlarını keşfedin!
+                    iOS geliştirme dünyasına adım atın. Modern ve kullanıcı
+                    dostu uygulamalar geliştirmenin sırlarını keşfedin!
                   </div>
                 </h2>
               </div>
@@ -343,7 +225,7 @@ export default function Home() {
                 ].map((unit, index) => (
                   <div
                     key={index}
-                    className="bg-background border-2 hover:border-secondary rounded-xl p-6 shadow-sm hover:shadow-md group transition-all duration-300 cursor-pointer"
+                    className="bg-background border-2 hover:border-accent rounded-xl p-6 shadow-sm hover:shadow-md group transition-all duration-300 cursor-pointer"
                   >
                     <div className="flex items-center space-x-4">
                       <div className="pt-0 mt-0 flex-shrink-0">
@@ -378,7 +260,7 @@ export default function Home() {
         <section className="max-w-7xl px-4 sm:px-6 md:px-8 mx-auto py-12 sm:py-18 md:py-48">
           <h2 className="text-center text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 sm:mb-8 md:mb-12">
             <span className="text-black dark:text-white">Kısaca </span>
-            <span className="text-accent ">3</span>
+            <span className="text-accent ">6</span>
             <span className="text-black dark:text-white"> Madde ile </span>
             <span className="text-accent ">
               Neden Bu Bootcamp'e Katılmalısın?
@@ -386,24 +268,7 @@ export default function Home() {
           </h2>
 
           {/* Benefits Cards - Responsive Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-4 lg:gap-6 mt-8">
-            {bootcampBenefits.map((benefit, index) => (
-              <div
-                key={index}
-                className="relative group mx-auto w-full max-w-md md:max-w-none"
-              >
-                {/* Using box-shadow instead of translated element */}
-                <div className="bg-primary rounded-lg p-4 sm:p-5 md:p-6 border-2 sm:border-3 md:border-4 border-primary relative min-h-[150px] sm:min-h-[180px] md:min-h-[200px] flex flex-col justify-between shadow-[8px_8px_0px_0px_#41DF99]">
-                  <h3 className="text-base sm:text-lg md:text-xl font-bold text-white mb-2">
-                    {benefit.title}
-                  </h3>
-                  <p className="text-white text-xs sm:text-sm md:text-base font-montserrat-mid text-justify">
-                    {benefit.content}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <FAQsWithGrid />
         </section>
       </div>
       <SponsorSlider sponsors={events[0].sponsors} />

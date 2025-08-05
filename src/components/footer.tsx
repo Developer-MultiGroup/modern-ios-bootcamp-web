@@ -23,7 +23,7 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="relative text-color-background py-6 px-6 md:px-12 md:py-12 flex flex-col items-center justify-center min-h-60 bg-color-secondary w-5/6 2xl:w-2/3 mx-auto mb-12 mt-12 rounded-2xl font-montserrat-semi">
+    <footer className="relative text-color-background py-6 px-6 md:px-12 md:py-12 flex flex-col items-center justify-center min-h-60 bg-[#1C1C1C] w-5/6 2xl:w-2/3 mx-auto mb-12 mt-12 rounded-2xl font-montserrat-semi">
       <div className="w-full flex flex-col gap-12">
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left w-full gap-6">

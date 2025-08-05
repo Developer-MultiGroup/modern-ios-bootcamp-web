@@ -65,7 +65,7 @@ const Navbar = () => {
                   >
                     <button
                       onClick={() => handleScrollOrRedirect(item.href)}
-                      className="text-lg font-bold text-white hover:text-secondary transition-colors hover:cursor-pointer"
+                      className="text-lg font-bold text-white hover:text-accent transition-colors hover:cursor-pointer"
                     >
                       {item.label}
                     </button>

@@ -97,7 +97,7 @@ const FloatingActionButton = ({ alwaysShow }: { alwaysShow: boolean }) => {
       }`}
     >
       <div
-        className={`relative w-12 h-12 sm:w-14 sm:h-14 bg-[#41df9a] rounded-full shadow-lg cursor-pointer transition-all duration-300 ${
+        className={`relative w-12 h-12 sm:w-14 sm:h-14 bg-primary rounded-full shadow-lg cursor-pointer transition-all duration-300 ${
           isActive ? "scale-105 shadow-xl" : "shadow-md"
         }`}
         onClick={() => setIsActive(!isActive)}

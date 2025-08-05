@@ -6,6 +6,7 @@ import Script from "next/script";
 import Footer from "../components/footer";
 import { ResourceProvider } from "@/context/ResourceContext";
 import { Open_Sans } from "next/font/google";
+import { SimpleFooterWithFourGrids } from "@/components/new-footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -69,7 +70,7 @@ export default function RootLayout({
         <ResourceProvider>
           <Navbar />
           {children}
-          <Footer />
+          <SimpleFooterWithFourGrids />
         </ResourceProvider>
       </body>
     </html>
