@@ -12,7 +12,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import { formatIsoDate } from "@/lib/event-utils";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import { useRouter } from "next/navigation";
 
 interface SessionContainerProps {
@@ -115,7 +115,7 @@ export default function SessionContainer({ event }: SessionContainerProps) {
     show: {
       opacity: 1,
       scale: 1,
-      transition: { type: "spring", stiffness: 200, damping: 15 },
+      transition: { duration: 0.3 },
     },
     exit: { opacity: 0, scale: 0.8, transition: { duration: 0.2 } },
   };

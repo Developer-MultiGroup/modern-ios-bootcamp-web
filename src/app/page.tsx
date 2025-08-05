@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-import GoogleLogoInfiniteScroll from "../components/GoogleInfiniteScroll";
 import { useEffect, useState } from "react";
 import { ChevronDownIcon } from "lucide-react";
 import FloatingActionButton from "@/components/floating-action-button";
@@ -9,7 +7,6 @@ import SponsorSlider from "@/components/sponsor-slider";
 import events from "@/data/events";
 import { FlipWords } from "@/components/ui/flip-words";
 import { Button } from "@/components/ui/moving-border";
-import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
 import { StatsWithNumberTicker } from "@/components/ui/stats-with-ticker";
 import { MacbookScroll } from "@/components/ui/macbook-scroll";
 import { FAQsWithGrid } from "@/components/ui/faq";

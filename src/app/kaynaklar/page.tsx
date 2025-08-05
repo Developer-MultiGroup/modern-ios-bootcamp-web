@@ -3,7 +3,7 @@
 import { useState, useEffect, useMemo } from "react";
 import { Search, Plus } from "lucide-react";
 import Masonry from "react-masonry-css";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import {
   Card,
   CardContent,
@@ -107,7 +107,6 @@ export default function ResourcePage() {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut",
       },
     },
   };
@@ -119,7 +118,6 @@ export default function ResourcePage() {
       y: 0,
       transition: {
         duration: 0.5,
-        ease: "easeOut",
       },
     },
     exit: {
