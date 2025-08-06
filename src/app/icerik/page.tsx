@@ -65,7 +65,7 @@ export default function ContentPage() {
         </div>
       </section>
 
-      <section className="bg-[#141414] pb-20" id="konusmacilar">
+      {/* <section className="bg-[#141414] pb-20" id="konusmacilar">
         <div className="max-w-7xl md:max-w-[83.33%] lg:max-w-7xl 2xl:max-w-5/6 mx-auto">
           <h2 className="text-center text-3xl sm:text-3xl md:text-4xl lg:text-5xl mb-6 sm:mb-8 pt-20 pb-10 text-white">
             Konuşmacılırmız ile{" "}
@@ -75,7 +75,7 @@ export default function ContentPage() {
           </h2>
           <Speakers speakers={events[0].speakers} />
         </div>
-      </section>
+      </section> */}
 
       <section className="bg-[#1a1a1a] text-white py-20 px-4">
         <div className="max-w-7xl md:max-w-[83.33%] lg:max-w-7xl 2xl:max-w-2/3 mx-auto text-center">
@@ -161,7 +161,7 @@ export default function ContentPage() {
               Seç
             </span>
           </h2>
-          <SessionContainer event={events[0]} />
+          <SessionContainer sheetId={process.env.NEXT_PUBLIC_GOOGLE_IOS_ID} />
         </div>
       </section>
 

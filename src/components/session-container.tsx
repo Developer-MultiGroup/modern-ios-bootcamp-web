@@ -7,22 +7,69 @@ import { Card } from "@/components/ui/card";
 import { Calendar, Queue } from "@phosphor-icons/react";
 import { slugify } from "@/lib/slugify";
 // import { useToast } from "@/hooks/use-toast";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import { formatIsoDate } from "@/lib/event-utils";
 import { motion, AnimatePresence } from "motion/react";
 import { useRouter } from "next/navigation";
+import { getSessionsData } from "@/lib/google-sheets";
 
 interface SessionContainerProps {
-  event: Event;
+  event?: Event;
+  sheetId?: string; // Optional Google Sheets ID
 }
 
-export default function SessionContainer({ event }: SessionContainerProps) {
+export default function SessionContainer({ event: propEvent, sheetId }: SessionContainerProps) {
   // const { toast } = useToast();
   const router = useRouter();
   const [selectedSessions, setSelectedSessions] = useState<Session[]>([]);
+  const [event, setEvent] = useState<Event | null>(propEvent || null);
+  const [isLoading, setIsLoading] = useState(!propEvent);
+  const [error, setError] = useState<string | null>(null);
+
+  // Fetch data from Google Sheets if sheetId is provided
+  useEffect(() => {
+    const fetchData = async () => {
+      if (propEvent) {
+        setEvent(propEvent);
+        return;
+      }
+
+      if (!sheetId) {
+        // Use static data if no sheetId provided
+        try {
+          const events = await import('@/data/events');
+          setEvent(events.default[0]);
+        } catch (err) {
+          setError('Failed to load static data');
+        }
+        setIsLoading(false);
+        return;
+      }
+
+      try {
+        setIsLoading(true);
+        setError(null);
+        const fetchedEvent = await getSessionsData(sheetId);
+        setEvent(fetchedEvent);
+      } catch (err) {
+        setError('Failed to fetch data from Google Sheets');
+        // Fallback to static data
+        try {
+          const events = await import('@/data/events');
+          setEvent(events.default[0]);
+        } catch (fallbackErr) {
+          setError('Failed to load data');
+        }
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [propEvent, sheetId]);
 
   const handleCalendarDownload = async (sessions: Session[]) => {
     if (sessions.length === 0) return;
@@ -56,6 +103,8 @@ export default function SessionContainer({ event }: SessionContainerProps) {
       //   });
       return;
     }
+
+    if (!event) return;
 
     const eventData = {
       ...event,
@@ -92,11 +141,11 @@ export default function SessionContainer({ event }: SessionContainerProps) {
   };
 
   // Check if it's a networking event based on speaker info
-  const isNetworkingEvent = event.sessions.some(
+  const isNetworkingEvent = event?.sessions.some(
     (session) =>
       session.topic.toLowerCase().includes("network") ||
       session.speakerName.toLowerCase().includes("network")
-  );
+  ) || false;
 
   // Animation variants for the session badges
   const badgeContainerVariants = {
@@ -125,6 +174,34 @@ export default function SessionContainer({ event }: SessionContainerProps) {
       "https://www.youtube.com/playlist?list=PLQvJkakaBRKcEf3tq169jkNvoyiQN2XzN"
     );
   };
+
+  // Loading state
+  if (isLoading) {
+    return (
+      <div className="max-w-7xl mx-auto md:w-5/6 px-4 md:px-0">
+        <div className="flex items-center justify-center py-20">
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[#007AFF]"></div>
+        </div>
+      </div>
+    );
+  }
+
+  // Error state
+  if (error || !event) {
+    return (
+      <div className="max-w-7xl mx-auto md:w-5/6 px-4 md:px-0">
+        <div className="flex items-center justify-center py-20">
+          <div className="text-center">
+            <h3 className="text-xl font-bold text-white mb-2">Veri Yüklenemedi</h3>
+            <p className="text-gray-300">{error || 'Bilinmeyen bir hata oluştu'}</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Get unique speakers from sessions
+  const uniqueSpeakers = event?.speakers || [];
 
   return (
     <div className="max-w-7xl mx-auto md:w-5/6 px-4 md:px-0">
