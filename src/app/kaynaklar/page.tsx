@@ -247,7 +247,7 @@ export default function ResourcePage() {
               initial="initial"
               whileHover="hover"
               whileTap="tap"
-              className="font-montserrat-mid flex items-center gap-1 bg-green-900  text-white font-medium shadow-md hover:shadow-lg transition-all duration-200 border border-secondary/30 rounded-full px-4 py-2"
+              className="font-montserrat-mid flex items-center gap-1 bg-accent  text-white font-medium shadow-md hover:shadow-lg transition-all duration-200 border border-secondary/30 rounded-full px-4 py-2"
             >
               <Plus className="h-5 w-5" />
               <span>Yeni Kaynak Ekle</span>

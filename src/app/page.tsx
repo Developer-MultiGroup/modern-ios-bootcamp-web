@@ -78,7 +78,7 @@ export default function Home() {
           </p>
 
           <a
-            href="https://kommunity.com/devmultigroup/events/modern-ios-bootcamp-18857d79"
+            href="https://lodos.sh/gdX2622AtC"
             target="_blank"
             className="hover:cursor-pointer hover:scale-105 transition-all duration-300"
           >

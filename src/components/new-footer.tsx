@@ -19,14 +19,14 @@ export function SimpleFooterWithFourGrids() {
     },
     {
       title: "Biletler",
-      href: "https://kommunity.com/devmultigroup/events/modern-ios-bootcamp-18857d79/tickets/",
+      href: "https://lodos.sh/gdX2622AtC",
     },
   ];
 
   const socials = [
     {
-      title: "Kommunity",
-      href: "https://kommunity.com/devmultigroup",
+      title: "Lodos",
+      href: "https://lodos.sh/gdX2622AtC",
     },
     {
       title: "Github",
@@ -57,7 +57,7 @@ export function SimpleFooterWithFourGrids() {
           </div>
 
           <div className="mt-2 ml-2 font-montserrat-mid">
-            &copy; copyright Developer MultiGroup 2020–2025
+            &copy; Developer MultiGroup 2020–2025
           </div>
         </div>
         <div className="flex flex-col sm:flex-row justify-end items-start mt-10 sm:mt-0 md:mt-0 gap-8 sm:gap-16">

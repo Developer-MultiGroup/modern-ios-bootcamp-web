@@ -138,19 +138,19 @@ export default function SessionContainer({ event }: SessionContainerProps) {
             className="overflow-hidden"
           >
             <motion.div
-              className="p-4 bg-green-50 rounded-lg border border-green-200"
+              className="p-4 bg-[#007AFF]/20 rounded-lg border border-[#007AFF]/30"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.3, delay: 0.1 }}
             >
               <div className="flex flex-col md:flex-row justify-between items-start gap-2 md:items-center mb-4">
-                <h3 className="text-lg font-bold text-green-700">
+                <h3 className="text-lg font-bold text-white">
                   Seçilen Oturumlar ({selectedSessions.length})
                 </h3>
                 <Button
                   data-umami-event="Generate Custom Calendar"
                   onClick={() => handleCalendarDownload(selectedSessions)}
-                  className="bg-green-500 hover:bg-green-600 active:bg-green-800 shadow-md"
+                  className="bg-[#007AFF] hover:bg-[#007AFF]/90 shadow-md"
                 >
                   <Calendar className="mr-2" size={16} />
                   Seçilenleri Ekle
@@ -173,13 +173,13 @@ export default function SessionContainer({ event }: SessionContainerProps) {
                       layout
                     >
                       <Badge
-                        className="bg-green-200 text-green-800 hover:bg-green-300 cursor-pointer flex items-center gap-1 p-2"
+                        className="bg-[#007AFF]/20 text-[#FA7343] hover:bg-[#007AFF]/30 cursor-pointer flex items-center gap-1 p-2 border border-[#007AFF]/30"
                         onClick={() => toggleSessionSelection(session)}
                       >
                         <span className="font-medium">{session.startTime}</span>
                         <span className="mx-1">-</span>
                         <span>{session.speakerName}</span>
-                        <button className="ml-1 text-green-700 hover:text-green-900">
+                        <button className="ml-1 text-[#FA7343] hover:text-[#FA7343]/80">
                           ×
                         </button>
                       </Badge>
@@ -240,12 +240,12 @@ export default function SessionContainer({ event }: SessionContainerProps) {
             return (
               <Card
                 key={`session-card-${session.speakerName}-${session.topic}`}
-                className={`select-none bg-white shadow-lg w-full mx-auto transition-all overflow-hidden h-full min-h-48 md:min-h-36 py-0 ${
-                  isSelected ? "ring-2 ring-green-500" : ""
+                className={`select-none bg-[#007AFF]/20 shadow-lg w-full mx-auto transition-all overflow-hidden h-full min-h-48 md:min-h-36 py-0 border border-[#333] hover:border-[#007AFF]/50 ${
+                  isSelected ? "ring-2 ring-[#007AFF]" : ""
                 }`}
               >
                 <div className="flex h-full">
-                  <div className="relative min-w-[160px] w-[160px] h-full bg-indigo-900 overflow-hidden shrink-0">
+                  <div className="relative min-w-[160px] w-[160px] h-full bg-[#141414] overflow-hidden shrink-0">
                     <Image
                       src={`/images/speakers/${slugify(
                         session.speakerName
@@ -259,7 +259,7 @@ export default function SessionContainer({ event }: SessionContainerProps) {
                   </div>
                   <div
                     className={`flex-1 p-6 flex items-start justify-between relative hover:cursor-pointer ${
-                      isSelected ? "bg-green-50" : "bg-white"
+                      isSelected ? "bg-[#007AFF]/10" : "bg-transparent"
                     }`}
                     onClick={() => {
                       toggleSessionSelection(session);
@@ -267,7 +267,7 @@ export default function SessionContainer({ event }: SessionContainerProps) {
                   >
                     <div className="flex-1">
                       <div className="flex items-center">
-                        <p className="text-sm font-medium text-gray-500">
+                        <p className="text-sm font-medium text-gray-400">
                           {session.date != ""
                             ? `${formatIsoDate(session.date)} ${
                                 session.startTime
@@ -275,10 +275,10 @@ export default function SessionContainer({ event }: SessionContainerProps) {
                             : "Tarih Belirlenecek"}
                         </p>
                       </div>
-                      <p className="text-xl font-bold text-gray-900 mt-1">
+                      <p className="text-xl font-bold text-white mt-1">
                         {session.speakerName}
                       </p>
-                      <p className="text-green-600 text-sm mt-1">
+                      <p className="text-[#FA7343] text-sm mt-1">
                         {session.topic}
                       </p>
                       {session.url && (
@@ -286,7 +286,7 @@ export default function SessionContainer({ event }: SessionContainerProps) {
                           href={session.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1 mt-2 text-sm font-medium text-accent"
+                          className="inline-flex items-center gap-1 mt-2 text-sm font-medium text-[#FA7343] hover:text-[#FA7343]/80 transition-colors"
                           aria-label={`Watch ${session.topic} by ${session.speakerName} on YouTube`}
                         >
                           <span className="hover:underline hover:cursor">
@@ -303,8 +303,8 @@ export default function SessionContainer({ event }: SessionContainerProps) {
                         onCheckedChange={() => toggleSessionSelection(session)}
                         className={`${
                           isSelected
-                            ? "bg-green-500 text-white"
-                            : "border-green-500"
+                            ? "bg-[#007AFF] text-white border-[#007AFF]"
+                            : "border-[#007AFF]"
                         }`}
                       />
                     </div>

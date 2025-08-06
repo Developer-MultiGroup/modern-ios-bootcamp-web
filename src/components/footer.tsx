@@ -77,10 +77,10 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="https://kommunity.com/devmultigroup/events/android-blast-off-jetpack-compose-bootcamp-18857d79/tickets/"
+                  href="https://lodos.sh/gdX2622AtC"
                   className="hover:text-accent transition-all duration-300"
                 >
-                  Biletler
+                  Kayıt
                 </Link>
               </li>
             </ul>
@@ -94,11 +94,11 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="https://kommunity.com/devmultigroup"
+                  href="https://lodos.sh/gdX2622AtC"
                   target="_blank"
                   className="hover:text-accent transition-all duration-300"
                 >
-                  Kommunity
+                  Lodos
                 </Link>
               </li>
               <li>
@@ -155,7 +155,7 @@ export default function Footer() {
               Etkinliklerden geri kalmamak için hemen aramıza katıl!
             </p>
             <Link
-              href="https://kommunity.com/devmultigroup/events/android-blast-off-jetpack-compose-bootcamp-18857d79"
+              href="https://lodos.sh/gdX2622AtC"
               className="inline-block border border-accent px-4 py-2 rounded-md hover:bg-accent transition"
               target="_blank"
             >

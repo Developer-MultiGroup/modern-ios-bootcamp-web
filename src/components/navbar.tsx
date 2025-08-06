@@ -78,13 +78,12 @@ const Navbar = () => {
               className="relative h-11 px-6 text-zinc-900 group transition-all duration-300 ease-in-out"
             >
               <a
-                href="https://kommunity.com/devmultigroup/events/android-blast-off-jetpack-compose-bootcamp-18857d79/tickets"
+                href="https://lodos.sh/gdX2622AtC"
                 target="_blank"
               >
                 <div className="absolute inset-0 bg-accent transition-transform duration-300 ease-in-out rounded-md" />
                 <div className="absolute inset-0 bg-white group-hover:translate-x-2 group-hover:-translate-y-2 transition-all duration-300 ease-in-out rounded-md flex items-center justify-center">
                   <span
-                    data-umami-event="Kommunity Başvuru"
                     className="relative z-10 font-medium text-lg text-accent"
                   >
                     Başvur
@@ -139,7 +138,7 @@ const Navbar = () => {
               className="mt-6 rounded-lg text-lg text-black border-white px-8 py-3"
             >
               <a
-                href="https://kommunity.com/devmultigroup/events/android-blast-off-jetpack-compose-bootcamp-18857d79/tickets"
+                href="https://lodos.sh/gdX2622AtC"
                 target="_blank"
               >
                 Başvur
