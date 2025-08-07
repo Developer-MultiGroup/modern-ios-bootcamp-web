@@ -162,7 +162,7 @@ export default function Home() {
               <div className="flex flex-col justify-center">
                 <h2
                   style={{ fontFamily: "Open Sans", fontWeight: "800" }}
-                  className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold mb-6 sm:mb-8 text-center md:text-left"
+                  className="text-2xl sm:text-2xl md:text-3xl lg:text-5xl font-bold mb-6 sm:mb-8 text-center md:text-left"
                 >
                   {/* 4 eşit satır */}
                   <div className="block leading-snug">
@@ -254,8 +254,8 @@ export default function Home() {
         </section>
 
         {/* Benefits Section */}
-        <section className="max-w-7xl px-4 sm:px-6 md:px-8 mx-auto py-12 sm:py-18 md:py-48">
-          <h2 className="text-center text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 sm:mb-8 md:mb-12">
+        <section className="max-w-7xl px-4 sm:px-6 md:px-8 mx-auto py-12 sm:py-18 md:py-24">
+          <h2 className="text-center text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-3 sm:mb-4 md:mb-6">
             <span className="text-black dark:text-white">Kısaca </span>
             <span className="text-accent ">6</span>
             <span className="text-black dark:text-white"> Madde ile </span>

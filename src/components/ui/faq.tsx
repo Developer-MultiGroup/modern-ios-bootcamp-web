@@ -43,7 +43,7 @@ export function FAQsWithGrid() {
     faqsGrid[index % columns].push(faq);
   });
   return (
-    <div className="mx-auto grid max-w-7xl gap-4 px-4 py-20 md:px-8 md:py-20">
+    <div className="mx-auto grid max-w-7xl gap-4 px-4 py-5 md:px-2 md:py-5">
       
       <div className="mt-10 grid w-full grid-cols-1 items-start gap-4 md:grid-cols-3">
         {faqsGrid.map((faqs, rowIndex) => (

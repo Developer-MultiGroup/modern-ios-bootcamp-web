@@ -27,7 +27,7 @@ export default async function BlogIndexPage() {
             <span className="bg-gradient-to-r text-secondary">Yazıları</span>
           </h1>
           <p className="text-gray-400 mb-8 max-w-2xl mx-auto text-sm md:text-base">
-            Android Blast-Off hakkında yazdığımız bütün içerikler bir arada!
+            Developer MultiGroup olarak yazdığımız bütün içerikler bir arada!
             Haydi sen de hemen okumaya başla.
           </p>
         </header>
