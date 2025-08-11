@@ -24,7 +24,7 @@ async function fetchSessionsFromGoogleSheets(sheetId: string): Promise<Event> {
 
     const response = await sheets.spreadsheets.values.get({
       spreadsheetId: sheetId,
-      range: "A2:I",
+      range: "A2:I21",
     });
 
     const rows = response.data.values || [];
